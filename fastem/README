@@ -1,0 +1,19 @@
+Last updated March 14, 2016 by Wesley Berg (berg@atmos.colostate.edu)
+
+This directory contains code for the FASTEM4/5/6 ocean surface microwave emissivity models
+from the Community Radiative Transfer Model (CRTM) as well as the Remote Sensing Systems (RSS)
+ocean emissivity model. To run the FASTEM code you will first need to run the Makefile in the
+fastem_lib directory to create the library file (libfastem.a). In the main directory the
+routine Fastem.f90 allows the FASTEM models to be run independent of CRTM. The sample program
+cmpr_emis.f90 will compute emissivity using four different models including FASTEM4, FASTEM5,
+FASTEM6, and RSS. See comments in cmpr_emis.f90 header for information on inputs/outputs etc.
+
+Directories
+
+fastem_lib:  Contains all the required routines from CRTM to run the FASTEM models. Set up to
+             create an library archive file (libfastem.a), which is then linked to in order to
+             call the Fastem routine from the main calling program
+
+fastem_data: Contains the input data files for FASTEM4, FASTEM5, and FASTEM6
+
+rss_data:    Contains the input data files for the RSS emissivity code
